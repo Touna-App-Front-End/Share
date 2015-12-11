@@ -1,0 +1,432 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.3.8
+    site: https://github.com/ksky521/nodePPT
+    date: 
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>App前端知识拓展 - By SimMan</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    
+<link rel="stylesheet" href="./css/theme.moon.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>App前端知识拓展</h1>
+<h2>纯湿货讨论分享会</h2>
+<p><small>演讲者：All</small></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>大纲</h1>
+
+</hgroup><article>
+
+<ul>
+<li>一、Web前端简介</li>
+<li>二、原生App开发现状</li>
+<li>三、主流公司的解决方案</li>
+<li>四、Native Native</li>
+<li>五、学习计划</li>
+<li>六、其他扩展</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>web前端</h1>
+
+</hgroup><article>
+
+<blockquote>
+<p>Web前端开发工程师是一个很新的职业，在国内乃至国际上真正开始受到重视的时间不超过7年。Web前端开发是从网页制作演变而来的，名称上有很明显的时代特征。在互联网的演化进程中，网页制作是Web 1.0时代的产物，那时网站的主要内容都是静态的，用户使用网站的行为也以浏览为主。</p>
+<p>［－百度百科］</p>
+</blockquote>
+<p><a href="http://baike.baidu.com/link?url=yJyzX52ieZmiHZYNcJkvInIP6fOuTe7oGgt8I6JlQMrgBlyBU4zRfOQCRfzifHXC-pvnMeQ6Gcg78qurWkaZ0q" target="_blank">web前端介绍</a></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>前端技术栈</h1>
+
+</hgroup><article>
+
+<p><img src="http://p.simman.cc/2015-12-09_1449637876800389525.jpg!800" alt="2015-12-09_1449637876800389525.jpg"></p>
+
+</article></section></slide>
+<slide class="slide fill" style="background-image:url('./img/bg1.png')"><section class="slide-wrapper"><hgroup>
+<h1>Web 开发模式演变历史和趋势</h1>
+
+</hgroup><article>
+
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>一、简单明快的早期时代</h2>
+
+</hgroup><article>
+
+<ul>
+<li>可称之为 Web 1.0 时代，非常适合创业型小项目，不分前后端，经常 3-5 人搞定所有开发。页面由 JSP、PHP 等工程师在服务端生成，浏览器负责展现。基本上是服务端给什么浏览器就展现什么，展现的控制在 Web Server 层。</li>
+<li>这种模式的好处是：简单明快，本地起一个 Tomcat 或 Apache 就能开发，调试什么的都还好，只要业务不太复杂。</li>
+<li>然而业务总会变复杂，这是好事情，否则很可能就意味着创业失败了。业务的复杂会让 Service 越来越多，参与开发的人员也很可能从几个人快速扩招到几十人。在这种情况下，会遇到一些典型问题：</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<ul>
+<li>1、Service 越来越多，调用关系变复杂，前端搭建本地环境不再是一件简单的事。考虑团队协作，往往会考虑搭建集中式的开发服务器来解决。这种解决方案对编译型的后端开发来说也许还好，但对前端开发来说并不友好。天哪，我只是想调整下按钮样式，却要本地开发、代码上传、验证生效等好几个步骤。也许习惯了也还好，但开发服务器总是不那么稳定，出问题时往往需要依赖后端开发搞定。看似仅仅是前端开发难以本地化，但这对研发效率的影响其实蛮大。</li>
+<li>2、JSP 等代码的可维护性越来越差。JSP 非常强大，可以内嵌 Java 代码。这种强大使得前后端的职责不清晰，JSP 变成了一个灰色地带。经常为了赶项目，为了各种紧急需求，会在 JSP 里揉杂大量业务代码。积攒到一定阶段时，往往会带来大量维护成本。</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>二、后端为主的 MVC 时代</h2>
+
+</hgroup><article>
+
+<p>为了降低复杂度，以后端为出发点，有了 Web Server 层的架构升级，比如 Structs、Spring MVC 等，这是后端的 MVC 时代。</p>
+<p><img src="http://p.simman.cc/2015-12-09_1449639196494924475.jpeg!800" alt="2015-12-09_1449639196494924475.jpeg"></p>
+<p>代码可维护性得到明显好转，MVC 是个非常好的协作模式，从架构层面让开发者懂得什么代码应该写在什么地方。这个阶段的典型问题是：</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<ul>
+<li><p>1、前端开发重度依赖开发环境。这种架构下，前后端协作有两种模式：一种是前端写 demo，写好后，让后端去套模板。淘宝早期包括现在依旧有大量业务线是这种模式。好处很明显，demo 可以本地开发，很高效。不足是还需要后端套模板，有可能套错，套完后还需要前端确定，来回沟通调整的成本比较大。另一种协作模式是前端负责浏览器端的所有开发和服务器端的 View 层模板开发，支付宝是这种模式。好处是 UI 相关的代码都是前端去写就好，后端不用太关注，不足就是前端开发重度绑定后端环境，环境成为影响前端开发效率的重要因素。</p>
+</li>
+<li><p>2、前后端职责依旧纠缠不清。Velocity 模板还是蛮强大的，变量、逻辑、宏等特性，依旧可以通过拿到的上下文变量来实现各种业务逻辑。这样，只要前端弱势一点，往往就会被后端要求在模板层写出不少业务代码。还有一个很大的灰色地带是 Controller，页面路由等功能本应该是前端最关注的，但却是由后端来实现。Controller 本身与 Model 往往也会纠缠不清，看了让人咬牙的代码经常会出现在 Controller 层。这些问题不能全归结于程序员的素养，否则 JSP 就够了。</p>
+</li>
+</ul>
+<p>经常会有人吐槽 Java，但 Java 在工程化开发方面真的做了大量思考和架构尝试。Java 蛮符合马云的一句话：让平凡人做非凡事。</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>三、Ajax 带来的 SPA 时代</h2>
+
+</hgroup><article>
+
+<p>历史滚滚往前，2004 年 Gmail 像风一样的女子来到人间，很快 2005 年 Ajax 正式提出，加上 CDN 开始大量用于静态资源存储，于是出现了 JavaScript 王者归来的 SPA （Single Page Application 单页面应用）时代。</p>
+<p><img src="http://p.simman.cc/2015-12-09_1449639795378426747.jpeg!800" alt="2015-12-09_1449639795378426747.jpeg"></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<p>这种模式下，前后端的分工非常清晰，前后端的关键协作点是 Ajax 接口。看起来是如此美妙，但回过头来看看的话，这与 JSP 时代区别不大。复杂度从服务端的 JSP 里移到了浏览器的 JavaScript，浏览器端变得很复杂。类似 Spring MVC，这个时代开始出现浏览器端的分层架构：</p>
+<p><img src="http://p.simman.cc/2015-12-09_1449639998076188865.jpeg!800" alt="2015-12-09_1449639998076188865.jpeg"></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<p>对于 SPA 应用，有几个很重要的挑战：</p>
+<ul>
+<li><p>1、前后端接口的约定。如果后端的接口一塌糊涂，如果后端的业务模型不够稳定，那么前端开发会很痛苦。这一块在业界有 API Blueprint 等方案来约定和沉淀接口，在阿里，不少团队也有类似尝试，通过接口规则、接口平台等方式来做。有了和后端一起沉淀的接口规则，还可以用来模拟数据，使得前后端可以在约定接口后实现高效并行开发。相信这一块会越做越好。</p>
+</li>
+<li><p>2、前端开发的复杂度控制。SPA 应用大多以功能交互型为主，JavaScript 代码过十万行很正常。大量 JS 代码的组织，与 View 层的绑定等，都不是容易的事情。典型的解决方案是业界的 Backbone，但 Backbone 做的事还很有限，依旧存在大量空白区域需要挑战。</p>
+</li>
+</ul>
+<p>SPA 让前端看到了一丝绿色，但依旧是在荒漠中行走。</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>四、前端为主的 MV* 时代</h2>
+
+</hgroup><article>
+
+<p><img src="http://p.simman.cc/2015-12-09_1449640079665677192.jpeg!800" alt="2015-12-09_1449640079665677192.jpeg"></p>
+<ul>
+<li>1、前后端职责很清晰。前端工作在浏览器端，后端工作在服务端。清晰的分工，可以让开发并行，测试数据的模拟不难，前端可以本地开发。后端则可以专注于业务逻辑的处理，输出 RESTful 等接口。</li>
+<li>2、前端开发的复杂度可控。前端代码很重，但合理的分层，让前端代码能各司其职。这一块蛮有意思的，简单如模板特性的选择，就有很多很多讲究。并非越强大越好，限制什么，留下哪些自由，代码应该如何组织，所有这一切设计，得花一本的厚度去说明。</li>
+<li>3、部署相对独立，产品体验可以快速改进。</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>五、Node 带来的全栈时代</h2>
+
+</hgroup><article>
+
+<p>前端为主的 MV* 模式解决了很多很多问题，但如上所述，依旧存在不少不足之处。随着 Node.js 的兴起，JavaScript 开始有能力运行在服务端。这意味着可以有一种新的研发模式：</p>
+<p><img src="http://p.simman.cc/2015-12-09_1449640242177401184.png!800" alt="2015-12-09_1449640242177401184.png"></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<p>在这种研发模式下，前后端的职责很清晰。对前端来说，两个 UI 层各司其职：</p>
+<ul>
+<li>1、Front-end UI layer 处理浏览器层的展现逻辑。通过 CSS 渲染样式，通过 JavaScript 添加交互功能，HTML 的生成也可以放在这层，具体看应用场景。</li>
+<li>2、Back-end UI layer 处理路由、模板、数据获取、cookie 等。通过路由，前端终于可以自主把控 URL Design，这样无论是单页面应用还是多页面应用，前端都可以自由调控。后端也终于可以摆脱对展现的强关注，转而可以专心于业务逻辑层的开发。</li>
+</ul>
+<p>通过 Node，Web Server 层也是 JavaScript 代码，这意味着部分代码可前后复用，需要 SEO 的场景可以在服务端同步渲染，由于异步请求太多导致的性能问题也可以通过服务端来缓解。前一种模式的不足，通过这种模式几乎都能完美解决掉。与 JSP 模式相比，全栈模式看起来是一种回归，也的确是一种向原始开发模式的回归，不过是一种螺旋上升式的回归。</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<p>基于 Node 的全栈模式，依旧面临很多挑战：</p>
+<ul>
+<li>1、需要前端对服务端编程有更进一步的认识。比如 network/tcp、PE 等知识的掌握。</li>
+<li>2、Node 层与 Java 层的高效通信。Node 模式下，都在服务器端，RESTful HTTP 通信未必高效，通过 SOAP 等方式通信更高效。一切需要在验证中前行。</li>
+<li>3、对部署、运维层面的熟练了解，需要更多知识点和实操经验。</li>
+<li>4、大量历史遗留问题如何过渡。这可能是最大最大的阻力。</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>原生App开发现状</h1>
+
+</hgroup><article>
+
+<ul class="fadeIn">
+<li>1、人才稀缺<ul>
+<li>稍大一点的公司需要 (Android、iOS、Web前端)</li>
+</ul>
+</li>
+<li>2、代码复用<ul>
+<li>能否做到全平台的Model层复用？</li>
+</ul>
+</li>
+<li>3、UI排版</li>
+<li>4、发布更新<ul>
+<li>Android需要发布N个渠道, 还会有加固的问题存在</li>
+<li>iOS相对更为麻烦, 苹果服务器抽风、审核被拒、审核周期漫长</li>
+<li>用户就是不更新你的最新版应用（诱惑更新？强制更新？）</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide hasnote"><aside class="note">
+<section>
+<h2>百度的GMU</h2>
+<hr>
+<p>GMU（Global Mobile UI）是百度前端通用组开发的移动端组件库，GMU是基于zepto的mobile UI组件库，提供webapp、pad端简单易用的UI组件。具有代码体积小、简单、易用等特点，组件内部处理了很多移动端的bug，覆盖机型广，能大大减少开发交互型组件的工作量，非常适合移动端网站项目。相比其他框架，百度的UI库更接地气，配合百度强大的用户群，在各种山寨机和山寨浏览器上也可以取得不错的体验。</p>
+<p>官网地址： <a href="http://gmu.baidu.com/" target="_blank">http://gmu.baidu.com/</a></p>
+<p>文档地址： <a href="http://gmu.baidu.com/doc" target="_blank">http://gmu.baidu.com/doc</a></p>
+<p>源码地址： <a href="https://github.com/gmuteam/GMU" target="_blank">https://github.com/gmuteam/GMU</a></p>
+<h2>腾讯</h2>
+<hr>
+<p>移动Web开发规范、JM(移动Javascript框架)、JMUI（移动UI组件库）、Mobug（移动开发调试工具）、Mars（移动Web经验知识库）</p>
+
+</section>
+</aside><section class="slide-wrapper"><hgroup>
+<h1>大公司是怎么解决的？</h1>
+
+</hgroup><article>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">公司</th>
+<th style="text-align:left">解决方案</th>
+<th style="text-align:left">网址 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">百度</td>
+<td style="text-align:left">GMU</td>
+<td style="text-align:left"><a href="http://gmu.baidu.com/" target="_blank">http://gmu.baidu.com/</a> </td>
+</tr>
+<tr>
+<td style="text-align:left">腾讯</td>
+<td style="text-align:left">Spirit</td>
+<td style="text-align:left"><a href="http://alloyteam.github.io/Spirit/" target="_blank">http://alloyteam.github.io/Spirit/</a></td>
+</tr>
+<tr>
+<td style="text-align:left">阿里</td>
+<td style="text-align:left">react native</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>国外的框架</h1>
+
+</hgroup><article>
+
+<p><img src="http://p.simman.cc/2015-12-09_1449652008875419572.png" alt="2015-12-09_1449652008875419572.png"></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>Native 和 Web 融合 （淘宝）</h1>
+
+</hgroup><article>
+
+<p><a href="http://p.simman.cc/2015-12-09_1449653167137939571.pdf" target="_blank">http://p.simman.cc/2015-12-09_1449653167137939571.pdf</a></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>关于体验</h1>
+
+</hgroup><article>
+
+<ul>
+<li>iOS 左滑返回 （可能左侧按钮是点击最多的按钮了....）</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>学习计划</h1>
+
+</hgroup><article>
+
+<ul>
+<li><ol>
+<li>每周一会（暂定周四晚）</li>
+</ol>
+</li>
+<li><ol>
+<li>第一周：html5</li>
+</ol>
+</li>
+<li><ol>
+<li>第二周: css3</li>
+</ol>
+</li>
+<li><ol>
+<li>第三周: css3</li>
+</ol>
+</li>
+<li><ol>
+<li>第四周: js</li>
+</ol>
+</li>
+<li><ol>
+<li>第四周: js</li>
+</ol>
+</li>
+<li><ol>
+<li>第七周：小作品</li>
+</ol>
+</li>
+</ul>
+<p>学习采用自学模式。</p>
+<ol>
+<li><a href="http://www.jikexueyuan.com/" target="_blank">http://www.jikexueyuan.com/</a>   （选取课程进行团购）</li>
+<li><a href="http://www.w3school.com.cn/" target="_blank">http://www.w3school.com.cn/</a>    （在线文档）</li>
+</ol>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>其他扩展</h2>
+
+</hgroup><article>
+
+<ul>
+<li>Github 的使用 （<a href="https://github.com/Touna-App-Front-End）" target="_blank">https://github.com/Touna-App-Front-End）</a></li>
+<li>Gitbook</li>
+<li>MarkDown</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>参考链接</h2>
+<ul>
+<li><a href="http://www.cnblogs.com/lhb25/p/web-development-mode-evolve.html" target="_blank">前端文摘：Web 开发模式演变历史和趋势</a></li>
+<li><a href="http://zhangdaiping.iteye.com/blog/1613929" target="_blank">移动WebApp开发 JS框架对比</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/react-native/" target="_blank">React Native 官方文档中文版</a></li>
+<li><a href="http://ionicframework.com/" target="_blank">ionicframework</a></li>
+<li><a href="http://www.idangero.us/framework7" target="_blank">framework7</a></li>
+<li><a href="http://amazeui.org/" target="_blank">amazeui</a></li>
+<li><a href="https://github.com/ele828/react-native-guide" target="_blank">React-Native指南</a></li>
+<li><a href="http://www.zhihu.com/question/27852694/answer/38850201" target="_blank">如何评价 React Native？</a></li>
+<li><a href="http://www.appinn.com/markdown/" target="_blank">MarkDown 语法</a></li>
+<li><a href="https://github.com/hakimel/reveal.js" target="_blank">Markdown转ppt工具reveal.js</a>, <a href="http://lab.hakim.se/reveal-js/#/" target="_blank">Demo</a></li>
+<li><a href="http://www.soimort.org/posts/165/" target="_blank">Markdown+Pandoc→HTML幻灯片速成</a></li>
+<li><a href="http://aleung.github.io/presentation/markdown/slides.html" target="_blank">Markdown介绍slide</a></li>
+<li><a href="https://github.com/adamzap/landslide" target="_blank">landslide</a></li>
+<li><a href="http://dockerpool.com/static/books/gitbook_cn/index.html" target="_blank">gitbook 使用入门</a></li>
+</ul>
+
+</hgroup><article>
+
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>THANK YOU!</h1>
+
+</article></section></slide>
+        
+
+        <!-- <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+                <h2 style="color: white;">Powered By nodePPT v1.3.8</h2>
+            </article>
+        </slide> -->
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = (location.pathname + '#').split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'move',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/highlight.pack.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+<script src="./js/demo.js"></script>
+<link rel="stylesheet" href="./css/demo.css">
+<script src="./js/zoom.js"></script>
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  config: ["TeX-AMS-MML_HTMLorMML.js"],
+  tex2jax: {inlineMath: [['\\(','\\)']]}});
+  //['$','$'], 避免货币价格冲突
+</script>
+<script type="text/javascript" src="./js/mathjax/MathJax.js"></script>
+
+<!--placeholder-->
+</body>
+</html>
